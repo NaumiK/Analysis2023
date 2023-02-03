@@ -1,0 +1,121 @@
+\documentclass[a4paper,12pt]{article}
+
+
+\usepackage{cmap} % Поиск в PDF
+\usepackage[utf8]{inputenc} % Кодировка исходников
+\usepackage[english, russian]{babel} % Кодировка 
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools} % AMS packages
+\usepackage{icomma}
+
+\newcommand{\Name}{Математический анализ}
+\newcommand{\Lecturer}{Заботин Владислав Иванович}
+\newcommand{\Date}{2023}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Теорема}
+\newtheorem{lemma}[equation]{Лемма}
+\newtheorem*{statement}{Утверждение}
+\newtheorem*{problem}{Задача}
+\newtheorem*{example}{Пример}
+\theoremstyle{definition}
+\newtheorem*{definition}{Определение}
+\newtheorem*{note}{Замечание}
+\newtheorem*{dsg}{\underline{Обозначение}}
+\newtheorem*{prp}{\underline{Свойства}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Cx}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\lsq}{\leqslant}
+\newcommand{\gsq}{\geqslant}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\eqt}[1]{\stackrel{\mathrm{#1}}{=}}
+\newcommand{\mbb}[1]{\mathbb{#1}}
+\newcommand{\mum}[3]{\sum \limits_{#1}^{#2} {#3}} % My sUM
+\newcommand{\mim}[2]{\lim \limits_{#1} #2} % My lIM
+\newcommand{\bij}{\text{BIJ}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\fsb}[1]{\left\{ #1 \right\}} % figure sizeable brackets 
+\newcommand{\seg}[1]{\left[ #1 \right]}
+\newcommand{\ivl}[1]{\left( #1 \right)}
+\newcommand{\isconst}{=\text{const}}
+\newcommand{\const}{\text{const}}
+\newcommand{\dlta}{\text{d}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\none}{\varnothing}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\tif}{\text{если }} % Text IF
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\ke}{Ker}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\re}{Re}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstloadlanguages{[ISO]C++, Python}
+\lstset{ 
+    language=Python,
+    extendedchars=\true,
+    escapechar=|,
+    frame=tb,
+    commentstyle=\itshape,
+    stringstyle=\bfseries,
+    numbers=left,
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    tabsize=4
+    }
+    
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=2cm}% левое поле
+\geometry{right=2cm}% правое поле
+\geometry{top=2.5cm}% верхнее поле
+\geometry{bottom=3cm}% нижнее поле
+
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+% \usepackage{pstricks}
+\usepackage{transparent}
+% \usepackage{auto-pst-pdf}
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}                        % Длинные таблицы
+\usepackage{multirow}                         % Слияние строк в таблице
+
+
+\usepackage{hyperref}
+\hypersetup{
+	unicode=true,            % русские буквы в раздела PDF
+	colorlinks=true,       	 % Цветные ссылки вместо ссылок в рамках
+	linkcolor=black!15!blue, % Внутренние ссылки
+	citecolor=green,         % Ссылки на библиографию
+	filecolor=magenta,       % Ссылки на файлы
+	urlcolor=NavyBlue,       % Ссылки на URL
+}
+
+% Изменить колонтинулы!!!
+\usepackage{titleps}
+\newpagestyle{main}{
+	\setheadrule{0.4pt}
+	\sethead{\Name}{}{\Lecturer}
+	\setfootrule{0.4pt}                       
+	\setfoot{КАИ ИКТЗИ ПМИ, \Date}{}{\thepage} 
+}
+\pagestyle{main}  

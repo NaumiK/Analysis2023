@@ -1,0 +1,71 @@
+\section{Лекция}
+\subsection{Производные и дифференциалы высших порядков}
+\begin{definition}
+    Пусть функция \( f \) дифференцируема на \( \ivl{a, b} \ni x_0 \), тогда определена функция \( \varphi\colon \ivl{a, b} \to \R \colon x \mapsto f'(x) \). Если \( \varphi \) дифференцируема в точке \( x_0 \), то \( \varphi'(x_0) \) - производная 2-го порядка.
+\end{definition}
+\begin{dsg} 
+    \[ f''(x_0) := \varphi'(x_0) =: \frac{\dlta^2f(x_0)}{\dlta x^2}\]
+\end{dsg}
+\begin{example}
+    \[ f(x)  = \sin(x) (x \in \R) \]
+    \[ f'(x) = \cos(x) (x \in \R) \]
+    \[ f''(x)=-\sin(x) (x \in \R) \]
+\end{example}
+\begin{definition} 
+    Выражение вида \( \dlta^2f(x_0) := f''(x_0)(\dlta x)^2 = f''(x_0)\dlta x^2 \) -- дифференциал 2-го порядка функции \( f \) в точке \( x_0 \). Аналогично можно ввести дифференциал \( n \)-го порядка: \[ \dlta^nf(x_0) = f^{(n)}(x_0)(\dlta x)^n \]
+\end{definition}
+\begin{example} 
+    Общая функция производной \( \sin \):
+    \[ f(x) = \sin(x) \]
+    \[ f'(x) = \cos(x) = \sin\ivl{x + \frac{\pi}{2}} \]
+    \[ f''(x) = \ivl{\sin\ivl{x + \frac{\pi}{2}}}' = \cos\ivl{x + \frac{\pi}{2}}\ivl{x+\frac{\pi}{2}}' = \cos\ivl{x+\frac{\pi}{2}} = -\sin(x) \]
+    \[ f'''(x) = \sin{\ivl{x + 3\frac{\pi}{2}}} \]
+    \[ f^{(n)}(x)=\sin{\ivl{x+n\frac{\pi}{2}}} \]
+    Где \( f^{(n)}(x) \) -- производная \( n \)-го порядка.
+\end{example}
+\begin{problem} 
+    Найти производную \( n \)-го порядка для функции \( f(x) = \ln(x) \), где \( x > 0 \).
+\end{problem}
+Сперва рассмотрим \( f', f'', f''' \):
+\[ f'(x) = \frac{1}{x} = x^{-1} \]
+\[ f''(x) = \ivl{x^{-1}}' = (-1)x^{-1-1} = -x^{-2} \]
+\[ f'''(x) = \ivl{-x^{-2}}' = 2x^{-3} = \frac{2}{x^3} \]
+Итак, мы здесь видим закономерность: находя производную вновь и вновь, мы <<спускаем>> предыдущий, \( (n-1) \)-й коэффициент, степень при x увеличивается, всё выражение меняет знак. Так, мы получаем выражение:
+\begin{equation} \label{ExLnDer}
+    f^{(n)}(x) = \left\{ \begin{array}{ll}
+        (-1)^{n-1}\frac{(n-1)!}{x^n}, & n > 0;\\
+        \ln(x), &  n = 0.
+    \end{array} \right.
+\end{equation}
+\begin{problem} 
+    Проверить правдивость выражения \ref{ExLnDer} для \( f(x) = \ln(x), x > 0 \) 
+\end{problem}
+Проверим по индукции: 
+Пусть \( E = \fsb{n \in \N \mid P \footref{ExLnDer}(n) } \)
+\begin{enumerate}
+    \item \( E \subset \N \);
+    \item \( f'(x) = \frac{1}{x} = (-1)^0 \frac{0!}{x^1}  \Longrightarrow 1 \in E \);
+    \item Пусть \( n \in E \Longrightarrow f^{(n)}(x) = (-1)^n \frac{(n-1)!}{x^n} \);
+    \item Докажем, что \( (n + 1) \in E \): \[ f^{(n+1)}(x) = \ivl{f^{(n)}}' = \ivl{(-1)^{n-1} \frac{(n-1)!}{x^n}}' = (-1)^{n-1}(n-1)!\ivl{x^{-n}}' = \] \[ = (-1)^{n-1}(n-1)!(-n)\ivl{x^{-n-1}} = (-1)^{n}n!\ivl{x^{-n-1}} = (-1)^n \frac{n!}{x^{n+1}} = f^{(n+1)}(x) \]
+    \item Итак, \( n \in E \Longrightarrow (n+1) \in E \);
+    \item Итак: \( \seg{E \subset \N \land 1 \in E \land n \in E \Longrightarrow (n+1) \in E} \Longrightarrow E = \N \)
+\end{enumerate}
+Итак, для любого натурального числа выполняется \ref{ExLnDer}, \( f(x) = \ln(x) = f^{(0)}(x) \), поэтому выражение \ref{ExLnDer} является правдой.
+\begin{note}
+    Для нахождения производной \( n \)-го порядка в точке \( x_0 \) мы должны иметь производную \( (n-1) \)-го порядка, определённую в окрестности этой точки \( U(x_0) \)
+\end{note}
+\subsection{Непрерывно-дифференцируемая функция}
+\begin{definition} 
+Функция, в окрестности точки \( x_0 \) которой определена производная \( n \)-го порядка, непрерывная в этой точке --- \( n \) раз непрерывно-дифференцируемая функция в точке \( x_0 \).
+\end{definition}
+Не каждая функция является непрервыно-дифференцируемой на всей области определения.
+\begin{example} Функция, непрерывно-дифференцируемая в точке \( 0 \): 
+\[ 
+    f(x) = \left\{ \begin{array}{ll}
+        x^2, & x \in \Q; \\
+        0,   & x \in \R \setminus \Q.
+    \end{array} \right.
+\]
+\end{example}
+
+\subsection{Формула Тейлора}
