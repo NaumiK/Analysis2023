@@ -48,7 +48,11 @@
         \item \( E \subset \N \);
         \item \( f'(x) = \frac{1}{x} = (-1)^0 \frac{0!}{x^1}  \Longrightarrow 1 \in E \);
         \item Пусть \( n \in E \Longrightarrow f^{(n)}(x) = (-1)^n \frac{(n-1)!}{x^n} \);
-        \item Докажем, что \( (n + 1) \in E \): \[ f^{(n+1)}(x) = \ivl{f^{(n)}}' = \ivl{(-1)^{n-1} \frac{(n-1)!}{x^n}}' = (-1)^{n-1}(n-1)!\ivl{x^{-n}}' = \] \[ = (-1)^{n-1}(n-1)!(-n)\ivl{x^{-n-1}} = (-1)^{n}n!\ivl{x^{-n-1}} = (-1)^n \frac{n!}{x^{n+1}} = f^{(n+1)}(x) \]
+        \item Докажем, что \( (n + 1) \in E \): 
+        \begin{multline*} 
+            f^{(n+1)}(x) = \ivl{f^{(n)}}' = \ivl{(-1)^{n-1} \frac{(n-1)!}{x^n}}' = (-1)^{n-1}(n-1)!\ivl{x^{-n}}' = \\ 
+            = (-1)^{n-1}(n-1)!(-n)\ivl{x^{-n-1}} = (-1)^{n}n!\ivl{x^{-n-1}} = (-1)^n \frac{n!}{x^{n+1}} = f^{(n+1)}(x) 
+        \end{multline*}
         \item Итак, \( n \in E \Longrightarrow (n+1) \in E \);
         \item Итак: \( \seg{E \subset \N \land 1 \in E \land n \in E \Longrightarrow (n+1) \in E} \Longrightarrow E = \N \)
     \end{enumerate}
