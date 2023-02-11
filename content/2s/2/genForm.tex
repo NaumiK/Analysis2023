@@ -1,0 +1,35 @@
+\subsection{Общая форма остатка формулы Тейлора}
+Пусть \( f \) дифференцируема \( n + 1 \) раз в \( U(x_0) \), \( x = \const \).
+Рассмотрим функцию \begin{equation} \label{PhiRnFunct}
+\varphi (t) = f(x) - \mum{k=0}{n}{\frac{f^{(k)}(t)}{k!}(x-t)^k}
+\end{equation} Мы здесь <<двигаем>> уже не \( x \), она у нас фиксируема, а точку, по которой <<раскрывалась>> формула Тейлора, мы должны выбирать эту точку так, что \( t \in \seg{x, x_0} \), так мы выбираем \( t \) также из окрестности \( U(x_0) \), таким образом, она так же дифференцируема там \( n + 1 \) раз (если поменять \( x \), \( x_0 \) местами, то ничего не поменяется - сохраняется общность).
+Итак, рассмотрим некоторые случаи:
+\begin{enumerate}
+    \item \( t = x_0 \colon\)
+    \[ \varphi (x_0) = f(x_0) - \mum{k=0}{n}{\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k} = f(x_0) - T_n(x_0) = R_n(x) \]
+    \item \( t = x \colon\)
+    \[ \varphi (x) = f(x) - \mum{k=0}{n}{\frac{f^{(k)}(x)}{k!}(x-x)^k} = f(x) - f(x) = 0\]
+\end{enumerate}
+Пусть функция \( g(t) \) такова, что она: 
+\begin{enumerate} 
+    \item \( g(t) \) дифференцируема на \( \ivl{x, x_0} \);
+    \item \( g(t) \) непрерывна на \( \fsb{x, x_0} \);
+    \item \( g' \not= 0 \) на \( \ivl{x, x_0} \).
+\end{enumerate}
+Тогда, по теореме Коши, \( \exists \xi \in \ivl{x, x_0} \colon \)
+\[ \frac{\varphi (x) - \varphi (x_0)}{g(x) - g(x_0)} = \frac{\varphi'(\xi)}{g'(\xi)} \]
+% Это же утверждение можно переписать так:
+% \( \exists \theta \in \ivl{0, 1} \colon \)
+% \[ \frac{\varphi (x) - \varphi (x_0)}{g(x) - g(x_0)} = \frac{\varphi'(x + \theta (x_0 - x))}{g'(x + \theta (x_0 - x))} \]
+Итак, \( \varphi(x) = 0 \), \( \varphi(x_0) = R_n(x) \), тогда:
+\[ \frac{0 - R_n(x)}{g(x) - g(x_0)} = \frac{\varphi'(\xi)}{g'(\xi)} \Longrightarrow -R_n(x) = \frac{g(x) - g(x_0)}{g'(\xi)}\varphi'(\xi) \]
+Остаётся узнать, чему равно \( \varphi'(\xi) \).
+\begin{multline*}
+    \varphi'(t) = -f'(t) - f''(t)(x-t) + f'(t) - \frac{f''(t)}{2!}(x-t)^2 + f''(t)(x-t) - \dots \\ 
+    - \frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1} + \frac{f^{(n-1)}(t)}{(n-2)!}(x-t)^{n-2} - \frac{f^{(n+1)}(t)}{n!}(x-t)^{n} + \frac{f^{(n)}(t)}{(n-1)!}(x-t)^{n-1} = \\
+    = -\frac{f^{(n+1)}(t)}{n!}(x-t)^{n}
+\end{multline*}
+Таким образом:
+\begin{equation} \label{genFormRn}
+    R_n(x) = \frac{f^{(n+1)}(\xi)}{n!}(x-\xi)^{n}\frac{g(x) - g(x_0)}{g'(\xi)}
+\end{equation}
